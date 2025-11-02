@@ -1,0 +1,248 @@
+/* ===============================
+   Lab 02 | Stock Portfolio Dashboard
+   Author: Haniya Shifa
+   Palette: #8ECAE6, #219EBC, #023047, #FFB703, #FB8500
+================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #8ecae6;  /* light blue background */
+  color: #023047;            /* deep navy text */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  transition: background 0.5s ease;
+}
+
+/* -------- Header -------- */
+header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+header h1 {
+  color: #023047;
+  font-size: 2.3rem;
+}
+
+header p {
+  color: #219ebc;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+/* -------- Main Layout -------- */
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 90%;
+  margin: 20px auto;
+}
+
+/* -------- General Section Styles -------- */
+section {
+  background-color: #219ebc;  /* mid blue panels */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  flex: 1 1 300px;
+  min-width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  border-bottom: 2px solid #023047;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  color: #ffffff;
+}
+
+/* -------- Lists -------- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  background: #023047;
+  color: #8ecae6;
+  margin: 8px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+li:hover {
+  background: #ffb703;
+  transform: scale(1.03);
+  color: #023047;
+}
+
+li.selected {
+  background: #fb8500;
+  color: #023047;
+}
+
+/* -------- Stock Details -------- */
+#stockDetails {
+  margin-top: 10px;
+  background: #023047;
+  color: #8ecae6;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* -------- Form Sections (Edit, Add, Manage) -------- */
+.form-section,
+.add-section,
+.manage-section {
+  background-color: #219ebc;
+  border-radius: 12px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin: 25px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.form-section:hover,
+.add-section:hover,
+.manage-section:hover {
+  transform: translateY(-3px);
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #023047;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #023047;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #8ecae6;
+  color: #023047;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #ffb703;
+  box-shadow: 0 0 5px #ffb703;
+  outline: none;
+}
+
+/* -------- Buttons -------- */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #023047, #219ebc);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 183, 3, 0.3), rgba(251, 133, 0, 0.3));
+  transition: left 0.4s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #fb8500, #ffb703);
+  color: #023047;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(1px) scale(0.98);
+  background: linear-gradient(90deg, #ffb703, #fb8500);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px 2px rgba(255, 183, 3, 0.6);
+}
+
+/* -------- Footer -------- */
+footer {
+  text-align: center;
+  margin-top: auto;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #023047;
+}
+
+/* -------- Responsive Layout -------- */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section,
+  .add-section,
+  .manage-section {
+    width: 90%;
+  }
+}
+
+/* -------- Fade-In Animation -------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section,
+.form-section,
+.add-section,
+.manage-section {
+  animation: fadeIn 0.6s ease-in-out;
+}

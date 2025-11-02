@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 02 | Stock Portfolio Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📊 Stock Portfolio Dashboard</h1>
+    <p>By <strong>Haniya Shifa</strong></p>
+  </header>
+
+  <main>
+    <section class="user-section">
+      <h2>👤 User List</h2>
+      <ul id="userList"></ul>
+    </section>
+
+    <section class="portfolio-section">
+      <h2>💼 User Portfolio</h2>
+      <ul id="stockList"></ul>
+    </section>
+
+    <section class="details-section">
+      <h2>📈 Stock Details</h2>
+      <div id="stockDetails">Select a stock to view details.</div>
+    </section>
+  </main>
+
+  <!-- Edit User Section -->
+  <section class="form-section">
+    <h2>🛠 Edit User</h2>
+    <form id="userForm">
+      <label for="userName">Name:</label>
+      <input type="text" id="userName" placeholder="Enter user name" required />
+
+      <label for="userEmail">Email:</label>
+      <input type="email" id="userEmail" placeholder="Enter user email" required />
+
+      <div class="buttons">
+        <button id="saveUser">💾 Save</button>
+        <button id="deleteUser" type="button">🗑 Delete</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Add User Section -->
+  <section class="add-section">
+    <h2>➕ Add New User</h2>
+    <form id="addUserForm">
+      <label for="newUserName">Name:</label>
+      <input type="text" id="newUserName" placeholder="Enter new user name" required />
+
+      <label for="newUserEmail">Email:</label>
+      <input type="email" id="newUserEmail" placeholder="Enter new user email" required />
+
+      <label for="stockSelect">Select Stock:</label>
+      <select id="stockSelect" required>
+        <option value="">-- Choose a stock --</option>
+        <option value="AAPL">Apple (AAPL)</option>
+        <option value="MSFT">Microsoft (MSFT)</option>
+        <option value="GOOGL">Alphabet (GOOGL)</option>
+        <option value="AMZN">Amazon (AMZN)</option>
+        <option value="TSLA">Tesla (TSLA)</option>
+        <option value="META">Meta Platforms (META)</option>
+        <option value="NFLX">Netflix (NFLX)</option>
+        <option value="NVDA">NVIDIA (NVDA)</option>
+        <option value="INTC">Intel (INTC)</option>
+        <option value="JPM">JPMorgan Chase (JPM)</option>
+      </select>
+
+      <label for="shareCount">Number of Shares:</label>
+      <input type="number" id="shareCount" placeholder="Enter shares (e.g., 10)" required min="1" />
+
+      <div class="buttons">
+        <button id="addUserBtn" type="submit">✅ Add User</button>
+        <button id="clearFormBtn" type="button">🧹 Clear</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Manage Shares Section -->
+  <section class="manage-section">
+    <h2>📊 Manage Shares for Existing User</h2>
+    <form id="manageSharesForm">
+      <label for="existingUserSelect">Select User:</label>
+      <select id="existingUserSelect" required>
+        <option value="">-- Choose a user --</option>
+      </select>
+
+      <label for="existingStockSelect">Select Stock:</label>
+      <select id="existingStockSelect" required>
+        <option value="">-- Choose a stock --</option>
+        <option value="AAPL">Apple (AAPL)</option>
+        <option value="MSFT">Microsoft (MSFT)</option>
+        <option value="GOOGL">Alphabet (GOOGL)</option>
+        <option value="AMZN">Amazon (AMZN)</option>
+        <option value="TSLA">Tesla (TSLA)</option>
+        <option value="META">Meta Platforms (META)</option>
+        <option value="NFLX">Netflix (NFLX)</option>
+        <option value="NVDA">NVIDIA (NVDA)</option>
+        <option value="INTC">Intel (INTC)</option>
+        <option value="JPM">JPMorgan Chase (JPM)</option>
+      </select>
+
+      <label for="manageShareCount">Number of Shares:</label>
+      <input type="number" id="manageShareCount" placeholder="Enter shares (e.g., 5)" min="1" required />
+
+      <div class="buttons">
+        <button id="addSharesBtn" type="button">➕ Add Shares</button>
+        <button id="removeSharesBtn" type="button">➖ Remove Shares</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 | IS-5600 Lab 02 | Designed by <strong>Haniya Shifa</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
